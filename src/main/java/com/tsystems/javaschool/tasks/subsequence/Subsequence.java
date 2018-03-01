@@ -15,8 +15,6 @@ public class Subsequence {
      */
     @SuppressWarnings("rawtypes")
     public boolean find(List x, List y) {
-        // TODO: Implement the logic here
-
 
 
         if (x == null || y == null) {
@@ -51,11 +49,9 @@ public class Subsequence {
             }
         }
 
-
         if (checker.equals(x)) {
             return true;
         }
-
 
         return false;
     }

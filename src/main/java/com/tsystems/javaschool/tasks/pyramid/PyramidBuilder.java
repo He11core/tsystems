@@ -15,9 +15,6 @@ public class PyramidBuilder {
      */
     public int[][] buildPyramid(List<Integer> inputNumbers) {
 
-        // TODO : Implement your solution here
-
-        // Variables
 
         int numbersInPyramidBase;
         int inputNumbersSize = inputNumbers.size();
@@ -27,7 +24,8 @@ public class PyramidBuilder {
 
 
 
-        /* Сортировка списка входных чисел */
+        // Сортировка списка входных чисел
+
         try {
             Collections.sort(inputNumbers);
         } catch (Exception e) {
@@ -37,11 +35,7 @@ public class PyramidBuilder {
         }
 
 
-        /* Проверка списка на возможность построения пирамиды */
-
-
-
-
+        // Проверка списка на возможность построения пирамиды
 
         for (int i = 1; ; i++) {
             inputNumbersSize = inputNumbersSize - i;
@@ -67,6 +61,7 @@ public class PyramidBuilder {
             for (int j = 0; j < matrixCols; j++) {
 
                 //Формирование основания пирамиды
+
                 if (indent == 0) {
                     if (j % 2 == 0) {
                         resultPyramid[i][j] = inputNumbers.get(nextNumberIndex);
@@ -79,6 +74,7 @@ public class PyramidBuilder {
                 }
 
                 //Формирование четных рядов
+
                 if (indent > 0 && indent % 2 == 0) {
                     if (j >= indent && j <= matrixCols - 1 - indent && j % 2 == 0) {
                         resultPyramid[i][j] = inputNumbers.get(nextNumberIndex);
@@ -91,6 +87,7 @@ public class PyramidBuilder {
                 }
 
                 //Формирование нечетных рядов
+
                 if (indent > 0 && indent % 2 != 0) {
                     if (j >= indent && j <= matrixCols - 1 - indent && j % 2 != 0) {
                         resultPyramid[i][j] = inputNumbers.get(nextNumberIndex);
@@ -105,20 +102,13 @@ public class PyramidBuilder {
 
             }
 
-            // Сокращаем отступ для следующей строки
+            // Сокращаем боковой отступ для следующей строки
 
             indent--;
 
         }
 
-
-
-
-
         return resultPyramid;
     }
-
-
-
-
+    
 }
